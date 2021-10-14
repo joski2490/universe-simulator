@@ -76,6 +76,16 @@ function reset() {
         window.localStorage.setItem("entropy", "0")
         var elem = document.getElementById("myBar");
         elem.style.width = entropy + "%";
+        habitableCount = 0
+        updateHabitable()
+        inhabitedCount = 0
+        updateInhabited()
+        intelligentCount = 0
+        updateIntelligent()
+        interstellarCount = 0
+        updateInterstellar()
+        multidimensionalCount = 0
+        updateMultidimensional()
         
         hideLevel2()
         
@@ -88,74 +98,6 @@ function reset() {
   
 }
 
-function level2reset() {
-    if (confirm("Are you sure you want to reset?")) {
-        atomCount = 10**99
-        updateAtomCount()
-        energyCount = new bigDecimal(10**100)
-        updateEnergyCount()
-        autoAtomGenerators = 120
-        autoAtomsCost = new bigDecimal(10**41)
-        clearInterval(atom_timer)
-        updateAutoAtoms()
-        multiAtoms = 120
-        multiAtomsCost = new bigDecimal(10**41)
-        updateMultiAtoms() 
-        expoAtoms = 20
-        expoAtomsCost = new bigDecimal(10**41)
-        window.localStorage.setItem("expo_atom", String(expoAtoms))
-        window.localStorage.setItem("display_multi", String(displayMulti))
-        updateExpoAtoms()
-        displayCollagen = true
-        displayFlu = true
-        displayMulti = true
-        displayAuto = true
-        displayExpo = true
-        displayHair = true
-        displayGenome = true
-        displayBlood = true
-        displayWater = true
-        displayMid = true
-        displayHuman = true
-        displayVoid = true
-        displayPlanet = true
-        updateBooleans()
-        freeAtoms = 10**99
-        updateFreeAtoms()
-        solarCount = 0
-        solarCost = randomIntFromInterval(10**51, 10**56)
-        updateSolar()
-        nebulaCount = 0
-        nebulaCost = randomIntFromInterval(10**51, 10**56)
-        updateNebulas()
-        singularityCount = 0
-        singularityCost = randomIntFromInterval(10**45, 10**51)
-        singularityCost = 10**35
-        updateSingularities()
-        twinCount = 0
-        twinCost = randomIntFromInterval(10**47, 10**53)
-        updateTwins()
-        supermassiveCount = 0
-        supermassiveCost = randomIntFromInterval(10**52, 10**60)
-        clearInterval(super_timer)
-        clearInterval(solar_timer)
-        clearInterval(nebula_timer)
-        updateSupermassives()
-        planetCount = 0
-        starCount = 0
-        updatePlanets()
-        updateStars()
-        clearInterval(game_timer)
-        totalSeconds = 0
-        
-        for (var i = 0; i < consoleData.length - 1; i++) {
-            consoleData[i] = "."
-        }
-        consoleData[4] = "Welcome to your empty universe.  Go ahead and start creating."
-        updateConsole()
-    }
-  
-}
 
 //Persistence /////////////////////////////////////////////////////////////////////////////////////
 
