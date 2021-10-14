@@ -7,6 +7,7 @@ var consoleData = new Array(5)
 var consoleInfo = document.getElementById('console_data')
 var multiAtomsCost
 var energyCount
+var x
 
 //Reset
 function reset() {
